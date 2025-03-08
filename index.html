@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular MCP Servers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/mcp-logo.svg" alt="MCP Logo">
+                    <h1>MCP Servers</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#popular-servers">Popular Servers</a></li>
+                        <li><a href="#frameworks">Frameworks</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Model Context Protocol</h1>
+                <p>Discover the most popular MCP servers that extend AI capabilities through standardized implementations.</p>
+                <div class="hero-buttons">
+                    <a href="#popular-servers" class="btn btn-primary">Explore Servers</a>
+                    <a href="https://modelcontextprotocol.io" class="btn btn-secondary" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>What is MCP?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>The Model Context Protocol (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools. It standardizes how applications provide context to LLMs.</p>
+                    <p>Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/mcp-diagram.svg" alt="MCP Diagram">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="popular-servers" class="popular-servers">
+        <div class="container">
+            <h2>Popular MCP Servers</h2>
+            <div class="server-grid">
+                <!-- File System -->
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <h3>File System</h3>
+                    <p>Direct local file system access for AI models to read, write, and manage files.</p>
+                    <div class="server-tags">
+                        <span class="tag tag-typescript">TypeScript</span>
+                        <span class="tag tag-local">Local</span>
+                        <span class="tag tag-official">Official</span>
+                    </div>
+                    <a href="https://github.com/modelcontextprotocol/server-filesystem" class="server-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <!-- Google Drive -->
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i class="fab fa-google-drive"></i>
+                    </div>
+                    <h3>Google Drive</h3>
+                    <p>Google Drive integration for listing, reading, and searching files.</p>
+                    <div class="server-tags">
+                        <span class="tag tag-typescript">TypeScript</span>
+                        <span class="tag tag-cloud">Cloud</span>
+                        <span class="tag tag-official">Official</span>
+                    </div>
+                    <a href="https://github.com/modelcontextprotocol/server-google-drive" class="server-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <!-- Cloudflare -->
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloudflare</h3>
+                    <p>Integration with Cloudflare services including Workers, KV, R2, and D1.</p>
+                    <div class="server-tags">
+                        <span class="tag tag-typescript">TypeScript</span>
+                        <span class="tag tag-cloud">Cloud</span>
+                    </div>
+                    <a href="https://github.com/cloudflare/mcp" class="server-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <!-- Kubernetes -->
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i class="fas fa-dharmachakra"></i>
+                    </div>
+                    <h3>Kubernetes</h3>
+                    <p>Kubernetes cluster operations through MCP for managing containers.</p>
+                    <div class="server-tags">
+                        <span class="tag tag-go">Go</span>
+                        <span class="tag tag-cloud">Cloud</span>
+                    </div>
+                    <a href="https://github.com/flux159/mcp-server-kubernetes" class="server-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <!-- JetBrains IDE -->
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>JetBrains IDE</h3>
+                    <p>Connect to JetBrains IDE for enhanced development workflows.</p>
+                    <div class="server-tags">
+                        <span class="tag tag-typescript">TypeScript</span>
+                        <span class="tag tag-local">Local</span>
+                        <span class="tag tag-official">Official</span>
+                    </div>
+                    <a href="https://github.com/jetbrains/mcpProxy" class="server-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <!-- Fetch MCP -->
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Fetch MCP</h3>
+                    <p>An MCP server to flexibly fetch JSON, text, and HTML data from the web.</p>
+                    <div class="server-tags">
+                        <span class="tag tag-typescript">TypeScript</span>
+                        <span class="tag tag-local">Local</span>
+                    </div>
+                    <a href="https://github.com/zcaceres/fetch-mcp" class="server-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <!-- Home Assistant -->
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home Assistant</h3>
+                    <p>Access Home Assistant data and control smart home devices.</p>
+                    <div class="server-tags">
+                        <span class="tag tag-typescript">TypeScript</span>
+                        <span class="tag tag-local">Local</span>
+                    </div>
+                    <a href="https://github.com/tevonsb/homeassistant-mcp" class="server-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <!-- OpenAPI -->
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>OpenAPI</h3>
+                    <p>Connect any HTTP/REST API server using an Open API specification.</p>
+                    <div class="server-tags">
+                        <span class="tag tag-go">Go</span>
+                        <span class="tag tag-local">Local</span>
+                    </div>
+                    <a href="https://github.com/snaggle-ai/openapi-mcp-server" class="server-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="frameworks" class="frameworks">
+        <div class="container">
+            <h2>MCP Frameworks</h2>
+            <div class="framework-grid">
+                <!-- FastMCP Python -->
+                <div class="framework-card">
+                    <div class="framework-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>FastMCP Python</h3>
+                    <p>A high-level framework for building MCP servers in Python.</p>
+                    <a href="https://github.com/search?q=FastMCP+Python" class="framework-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <!-- FastMCP TypeScript -->
+                <div class="framework-card">
+                    <div class="framework-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>FastMCP TypeScript</h3>
+                    <p>A high-level framework for building MCP servers in TypeScript.</p>
+                    <a href="https://github.com/search?q=FastMCP+TypeScript" class="framework-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <!-- Foxy Contexts -->
+                <div class="framework-card">
+                    <div class="framework-icon">
+                        <i class="fab fa-golang"></i>
+                    </div>
+                    <h3>Foxy Contexts</h3>
+                    <p>Golang library to write MCP Servers declaratively with functional testing included.</p>
+                    <a href="https://github.com/search?q=Foxy+Contexts" class="framework-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <!-- LiteMCP -->
+                <div class="framework-card">
+                    <div class="framework-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>LiteMCP</h3>
+                    <p>A high-level framework for building MCP servers in JavaScript/TypeScript.</p>
+                    <a href="https://github.com/search?q=LiteMCP" class="framework-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2>Resources</h2>
+            <div class="resource-grid">
+                <a href="https://modelcontextprotocol.io" class="resource-card" target="_blank">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Official Documentation</h3>
+                    <p>Learn more about the protocol, how to build servers and clients.</p>
+                </a>
+                <a href="https://github.com/modelcontextprotocol" class="resource-card" target="_blank">
+                    <div class="resource-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub Organization</h3>
+                    <p>Explore the official repositories and contribute to the project.</p>
+                </a>
+                <a href="https://github.com/punkpeye/awesome-mcp-servers" class="resource-card" target="_blank">
+                    <div class="resource-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Awesome MCP Servers</h3>
+                    <p>A curated list of awesome Model Context Protocol servers.</p>
+                </a>
+                <a href="https://docs.anthropic.com/en/docs/agents-and-tools/mcp" class="resource-card" target="_blank">
+                    <div class="resource-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Claude MCP Integration</h3>
+                    <p>Learn how to set up MCP in Claude for Desktop.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/mcp-logo.svg" alt="MCP Logo">
+                    <p>Model Context Protocol</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#popular-servers">Popular Servers</a></li>
+                            <li><a href="#frameworks">Frameworks</a></li>
+                            <li><a href="#resources">Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="https://modelcontextprotocol.io" target="_blank">Official Documentation</a></li>
+                            <li><a href="https://github.com/modelcontextprotocol" target="_blank">GitHub Organization</a></li>
+                            <li><a href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank">Awesome MCP Servers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MCP Servers Directory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

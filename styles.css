@@ -19,6 +19,35 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --radius: 8px;
     --transition: all 0.3s ease;
+    --text-color-on-primary: white; /* For text on primary-colored backgrounds */
+
+    /* Footer specific colors for light mode */
+    --footer-bg: #1f2937;
+    --footer-text-color: white;
+    --footer-link-color: #d1d5db;
+    --footer-link-hover-color: white;
+    --footer-secondary-text-color: #9ca3af;
+}
+
+body.dark-mode {
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --secondary-color: #1f2937; /* Dark page background */
+    --text-color: #f9fafb;       /* Light text for dark mode */
+    --text-light: #9ca3af;     /* Lighter text for dark mode */
+    --border-color: #374151;     /* Dark mode border */
+    --card-bg: #2a303c;          /* Dark card background */
+
+    --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.02); /* Subtle whiteish shadow */
+    --shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.04), 0 2px 4px -1px rgba(255, 255, 255, 0.03);
+    --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.04), 0 4px 6px -2px rgba(255, 255, 255, 0.02);
+
+    /* Footer specific colors for dark mode */
+    --footer-bg: #111827;
+    --footer-text-color: #cbd5e1;
+    --footer-link-color: #9ca3af;
+    --footer-link-hover-color: #e2e8f0;
+    --footer-secondary-text-color: #6b7280; /* Adjusted for dark footer */
 }
 
 * {
@@ -31,7 +60,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
-    background-color: #f9fafb;
+    background-color: var(--secondary-color); /* Use variable for body background */
 }
 
 .container {
@@ -116,12 +145,17 @@ section {
 }
 
 .btn-secondary:hover {
-    background-color: #e5e7eb;
+    background-color: #e5e7eb; /* Specific for light mode */
 }
+
+body.dark-mode .btn-secondary:hover {
+    background-color: var(--border-color); /* Use variable for consistency */
+}
+
 
 /* Header */
 header {
-    background-color: white;
+    background-color: var(--card-bg); /* Use card-bg for header in light, adjust for dark */
     box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
@@ -143,6 +177,12 @@ header {
 .logo img {
     height: 40px;
     margin-right: 0.75rem;
+    transition: filter 0.3s ease;
+}
+
+body.dark-mode .logo img {
+    /* Invert and adjust for dark backgrounds. May need tuning. */
+    filter: brightness(0) invert(1); 
 }
 
 .logo h1 {
@@ -165,6 +205,40 @@ nav ul li a {
 
 nav ul li a:hover {
     color: var(--primary-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-button {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 50%; /* Makes it circular */
+    cursor: pointer;
+    display: inline-flex; /* Use inline-flex to align icon properly */
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.5rem; /* Spacing from nav links */
+    transition: var(--transition);
+    width: 36px; /* Explicit width */
+    height: 36px; /* Explicit height */
+}
+
+.theme-toggle-button:hover {
+    background-color: var(--border-color); /* Subtle hover, uses border color as bg */
+}
+
+.theme-toggle-button i {
+    font-size: 1rem; /* Adjust icon size */
+    line-height: 1; /* Ensure icon is centered if it has extra line height */
+}
+
+body.dark-mode .theme-toggle-button {
+    /* border-color and color will use dark mode variables automatically */
+}
+
+body.dark-mode .theme-toggle-button:hover {
+    /* background-color will use dark mode var(--border-color) automatically */
 }
 
 /* Hero Section */
@@ -209,6 +283,17 @@ nav ul li a:hover {
 .about-image img {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    transition: filter 0.3s ease;
+}
+
+body.dark-mode .about-image img {
+    /* If the image is an SVG with dark lines on a transparent background,
+       it might need inversion. If it's a photo or complex image,
+       a slight brightness reduction might be better, or no filter.
+       Using opacity as a generic example for potentially too-bright images. */
+    opacity: 0.85;
+    /* Or, if it's a dark SVG that needs inverting: */
+    /* filter: brightness(0) invert(1); */
 }
 
 /* Server Cards */
@@ -238,13 +323,17 @@ nav ul li a:hover {
     width: 50px;
     height: 50px;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-color-on-primary, white); /* Added a variable for text on primary elements */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
     font-size: 1.5rem;
+}
+
+body.dark-mode .server-icon {
+    color: #f0f0f0; /* Ensure icon color is light in dark mode if primary bg is dark */
 }
 
 .server-card h3 {
@@ -332,7 +421,8 @@ nav ul li a:hover {
     width: 60px;
     height: 60px;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-color-on-primary, white);
+    color: var(--text-color-on-primary, white);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -403,10 +493,12 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #1f2937;
-    color: white;
+    background-color: var(--footer-bg);
+    color: var(--footer-text-color);
     padding: 4rem 0 2rem;
 }
+
+/* body.dark-mode footer styles are implicitly handled by body.dark-mode vars */
 
 .footer-content {
     display: grid;
@@ -433,7 +525,7 @@ footer {
 }
 
 .footer-links-column h4 {
-    color: white;
+    color: var(--footer-text-color); /* Use footer specific variable */
     margin-bottom: 1.5rem;
 }
 
@@ -442,18 +534,18 @@ footer {
 }
 
 .footer-links-column ul li a {
-    color: #d1d5db;
+    color: var(--footer-link-color); /* Use footer specific variable */
 }
 
 .footer-links-column ul li a:hover {
-    color: white;
+    color: var(--footer-link-hover-color); /* Use footer specific variable */
 }
 
 .footer-bottom {
-    border-top: 1px solid #374151;
+    border-top: 1px solid var(--border-color); /* General border color is fine here */
     padding-top: 2rem;
     text-align: center;
-    color: #9ca3af;
+    color: var(--footer-secondary-text-color); /* Use footer specific variable */
 }
 
 /* Responsive Styles */

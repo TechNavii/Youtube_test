@@ -43,4 +43,44 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize highlight on page load
     highlightNavLink();
+
+    // Theme Toggle Functionality
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const bodyElement = document.body;
+    const themeIcon = themeToggleButton ? themeToggleButton.querySelector('i') : null; // Get the icon element
+
+    const updateThemeIcon = (theme) => {
+        if (themeIcon) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        }
+    };
+
+    // Load saved theme from localStorage
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        bodyElement.classList.add('dark-mode');
+        updateThemeIcon('dark');
+    } else {
+        bodyElement.classList.remove('dark-mode'); // Default to light
+        updateThemeIcon('light');
+    }
+
+    // Add event listener for theme toggle button
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', () => {
+            bodyElement.classList.toggle('dark-mode');
+            let newTheme = 'light';
+            if (bodyElement.classList.contains('dark-mode')) {
+                newTheme = 'dark';
+            }
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    }
 });
